@@ -1,0 +1,88 @@
+01_g.jpg (glaucoma)	
+	(1) not_g  0.0523    0.9477
+	(2) not_g 0.0409    0.9591
+	(3) not_g 0.0917    0.9083
+	T-(5) glau 0.6558    0.3442
+	T-(6) glau 0.6106    0.3894
+
+01_h.jpg (healthy)
+	T-(1) not_g  0.0088    0.9912
+	T-(2) not_g  0.0311    0.9689
+	T-(3) not_g 0.1706    0.8294
+	T-(5) not_g  0.0362    0.9638
+	T-(6) not_g 0.0632    0.9368
+
+04_h.jpg (healthy)
+	T-(1) not_g 0.1800    0.8200
+	T-(2) not_g 0.0021    0.9979
+	T-(3) not_g 0.0584    0.9416
+	T-(5) not_g 0.1350    0.8650
+	T-(6) not_g  0.0264    0.9736
+
+13_g.jpg (glaucoma)
+	(1) not_g 0.0239    0.9761
+	(2) not_g 0.0496    0.9504
+	(3) not_g  0.2906    0.7094
+	T-(5) glau 0.5069    0.4931
+	T-(6) glau 0.8799    0.1201
+
+drishtiGS_019.png (glaucoma)
+	(1) not_g 0.0000    1.0000
+	T-(2) glau 0.9898    0.0102
+	T-(3) glau 0.9929    0.0071
+	T-(5) glau  0.5750    0.4250
+	T-(6) glau 0.9301    0.0699
+
+drishtiGS_035.png (not g)
+	T-(1) not_g 0.0014    0.9986
+	T-(2)not_g 0.0115    0.9885
+	T-(3) not_g 0.4812    0.5188
+	(5) glau 0.5298    0.4702
+	T-(6) not_g 0.0264    0.9736
+
+Im130.bmp (normal)
+	T-(1) not_g 0.1531    0.8469
+	T-(2) not_g 0.0211    0.9789
+	T-(3) not_g 0.2506    0.7494
+	T-(5) not_g 0.0805    0.9195
+	T-(6) not_g 0.1869    0.8131
+Im166.bmp (normal)
+	(1) glau 0.9949    0.0051
+	T-(2) not_g  0.2164    0.7836
+	(3) glau 0.5056    0.4944
+	(5) glau 0.6706    0.3294
+	(6) glau 0.7618    0.2382
+
+Im121.bmp (deep)
+	(1) not_g  0.3335    0.6665
+	(2) not_g  0.0029    0.9971
+	(3) not_g 0.4131    0.5869
+	(5) not_g 0.0136    0.9864
+	(6) not_g 0.0435    0.9565
+
+Im103.bmp (deep)
+	T-(1) glau 0.9946    0.0054
+	(2) not_g 0.0395    0.9605
+	(3) not_g  0.3866    0.6134
+	T-(5) glau 0.9821    0.0179
+	T-(6) glau 0.9732    0.0268
+
+ROI - 8449_right.jpeg.png (Not)
+	T-(1) not_g  0.0000    1.0000
+	T-(2) not_g 0.0009    0.9991
+	T-(3) not_g 0.1362    0.8638
+	T-(5) not_g 0.0015    0.9985
+	T-(6)  not_g 0.0002    0.9998
+ROI - image231prime0.jpg.png (G)
+	T-(1) glau 0.9999    0.0001
+	(2) not_g 0.0324    0.9676
+	(3) not_g 0.3362    0.6638
+	T-(5) glau  0.9880    0.0120
+	T-(6) glau 0.8725    0.1275
+
+Data1(1)- Dataset Glaucoma-Detection-master acc 0.875
+Data2(2)- DrishtiGs senza augmentation acc 0.6000
+Data2(3)- DrishtiGs con augumentation acc 0.9000
+Data3(4)- HREF senza agumentation acc 12 elementi troppo pochi 0.5
+Data3(5)- (1)+(2)+(4) acc  0.8571
+Data3(6)- (5) con augmentation acc 0.8095
