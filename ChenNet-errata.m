@@ -1,18 +1,19 @@
-pathtiTrain = "C:\Users\lucaf\Desktop\EAI\Ophtamologia\Tesi\originales";
+%pathtiTrain = "C:\Users\lucaf\Desktop\EAI\Ophtamologia\Tesi\originales";
+pathtiTrain = "../../dataset/ORIGA/images";
 
 %% Rete sperimentale
 inLayer = imageInputLayer([256 256 3]);
 midLayers = [ convolution2dLayer(11, 3); reluLayer(); maxPooling2dLayer(2);...
     convolution2dLayer(5, 96); reluLayer(); maxPooling2dLayer(2); convolution2dLayer(3, 192);...
     maxPooling2dLayer(2); convolution2dLayer(3, 192);maxPooling2dLayer(2)];
-outLayers = [fullyConnectedLayer(2); softmaxLayer();fullyConnectedLayer(2); softmaxLayer();classificationLayer()];
+outLayers = [fullyConnectedLayer(2); softmaxLayer();fullyConnectedLayer(2); softmaxLayer(); classificationLayer()];
 
 ChenLayer = [inLayer; midLayers; outLayers];
 inputSize = ChenLayer(1).InputSize
 
 %% Datastore e Augmentation
 imds = imageDatastore(pathtiTrain,'IncludeSubfolders',true,'LabelSource','foldernames');
-[trainImgs,testImgs] = splitEachLabel(imds,0.15,0.85,'randomized');
+[trainImgs,testImgs] = splitEachLabel(imds, 99,'randomized');
 
 pixelRange = [-10 10];
 imageAugmenter = imageDataAugmenter( ...
@@ -21,7 +22,7 @@ imageAugmenter = imageDataAugmenter( ...
     'RandYTranslation',pixelRange);
 
 trainAug= augmentedImageDatastore(inputSize(1:2),trainImgs, 'DataAugmentation',imageAugmenter);
-testAug = augmentedImageDatastore(inputSize(1:2),testImgs); %validation
+testAug = augmentedImageDatastore(inputSize(1:2),testImgs);
 
 miniBatchSize = 1;
 valFrequency = floor(numel(trainAug.Files)/miniBatchSize);
